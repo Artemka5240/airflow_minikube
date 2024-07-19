@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.operators.email_operator import EmailOperator
 from datetime import datetime, timedelta
-
+#
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
@@ -13,7 +13,7 @@ default_args = {
 }
 
 dag = DAG(
-    'send_email_dag',
+    'email',
     default_args=default_args,
     description='A simple DAG to send an email',
     schedule_interval=timedelta(days=1),
